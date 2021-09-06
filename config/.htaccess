@@ -1,15 +1,4 @@
-# BEGIN WordPress
-
-RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-
-# END WordPress
-
 php_value memory_limit 2G
 php_value post_max_size 2G
 php_value upload_max_filesize 2G
+

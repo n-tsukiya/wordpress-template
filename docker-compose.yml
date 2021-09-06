@@ -21,6 +21,7 @@ services:
     image: wp_template
     volumes:
       - ./html:/var/www/html:delegated
+      - ./config/.htaccess:/var/www/html/.htaccess
     ports:
       - "8080:80"
     restart: always
@@ -31,5 +32,6 @@ services:
       WORDPRESS_DB_NAME: wordpress
     # コンテナ名は変更すること
     container_name: wordpress_template_web
+
 volumes:
   db_data:
