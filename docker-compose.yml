@@ -20,8 +20,8 @@ services:
     build: .
     image: wp_template
     volumes:
+      - ./html/.htaccess:/var/www/html/.htaccess
       - ./html:/var/www/html:delegated
-      - ./config/.htaccess:/var/www/html/.htaccess
     ports:
       - "8080:80"
     restart: always
