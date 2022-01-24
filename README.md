@@ -12,13 +12,6 @@ docker にて、
 
 ## 準備
 
-```linuxコマンド
-$ mkdir html
-```
-
-で、html/ディレクトリを作成する  
-<br>
-
 `docker-compose.yml`の 15 行目、33 行目の
 
 ```yml
@@ -69,13 +62,15 @@ $ docker-compose down
 以上。
 <br><br><br>
 
-## WordPress コンテナ
+## 各コンテナ概要
+
+### WordPress コンテナ
 
 ベースは`wordpress:php7.4-apache`とする（適宜更新予定）  
 Dockerfile でイメージを作成、`php.ini`ファイルを書き換えて WP 管理画面からの上限を増やしてある
 
 <br><br><br>
 
-## DB コンテナ
+### DB コンテナ
 
 特に変哲のない`mysql:5.7`イメージを使用（バージョンを上げた方が良いかも？）
