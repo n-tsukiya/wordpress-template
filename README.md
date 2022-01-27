@@ -13,11 +13,29 @@ dockerにて、
 ## プロジェクトの進め方
 ### 準備
 #### リポジトリの再作成
-```linuxコマンド
-$ rm -rf .git/ .gitignore
+```
+git clone git@github.com:n-tsukiya/wordpress-template.git
+mv wordpress-template [プロジェクト名]
+```
+ディレクトリ名を変更する  
+`README.md`に関しては、「開発時」移行の文章は残しておいてドキュメントとして活用する  
+<br>
+
+```
+cd [プロジェクト名]
+rm -rf .git
 ```
 で、本リポジトリのバージョン管理を削除、再度`git init`を行いプロジェクトとしてリポジトリを作成する  
 <br>
+
+
+#### .gitignoreの編集
+```
+db_data/*
+```
+`.gitignore`は上記の1行のみに修正  
+<br>
+
 
 #### docker-compose.ymlの編集
 `docker-compose.yml`の、
@@ -45,6 +63,7 @@ $ rm -rf .git/ .gitignore
 それに合わせて`WORDPRESS_DB_USER`, `WORDPRESS_DB_PASSWORD`, `container_name`も修正する。  
 <br>
 
+
 #### WordPressの初期設定
 
 ```
@@ -56,6 +75,7 @@ $ docker-compose up -d
 - db_data/配下にmysqlコアファイル
 が作成される  
 <br>
+
 
 ### 開発時
 #### 使用コマンド
@@ -84,6 +104,7 @@ $ docker-compose exec -T db mysqldump --no-tablespaces --single-transaction -u [
 このファイルも含めてコミットする  
 <br>
 
+
 #### DBのリストア
 ```
 $ docker-compose exec -T db mysql -u [DBユーザー名] --password='パスワード' wordpress < ./[バックアップファイル].sql
@@ -99,6 +120,7 @@ $ docker-compose exec -T db mysql -u [DBユーザー名] --password='パスワ�
 Dockerfile でイメージを作成、`php.ini`ファイルを書き換えて WP 管理画面からの上限を増やしてある。  
 また、`.htaccess`もバインドマウントで上限を開放している。  
 <br>
+
 
 ### DB コンテナ
 素の`mysql:5.7`イメージを使用（バージョンを上げた方が良いかも？）  

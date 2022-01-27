@@ -1,4 +1,4 @@
 /html/*
 !/html/.gitkeep
 !/html/.htaccess
-db_date/
+db_date/*
