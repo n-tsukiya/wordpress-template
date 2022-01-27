@@ -67,7 +67,7 @@ db_data/*
 #### WordPressの初期設定
 
 ```
-$ docker-compose up -d
+docker-compose up -d
 ```
 でコンテナ立ち上げ、`localhost:8080/`を確認して言語等の最低限の設定を行う  
 この際に、
@@ -80,7 +80,7 @@ $ docker-compose up -d
 ### 開発時
 #### 使用コマンド
 ```
-$ docker-compose up -d
+docker-compose up -d
 ```
 上記コマンドでコンテナ立ち上げ、`localhost:8080/`を確認、各種作業を行う  
 
@@ -88,17 +88,17 @@ $ docker-compose up -d
 終了時に
 
 ```
-$ docker-compose down
+docker-compose down
 ```
 上記コマンドでコンテナを落としておく  
 
-立ち上げ直す際はまた`$ docker-compose up -d`を打ち込む  
+立ち上げ直す際はまた`docker-compose up -d`を打ち込む  
 <br>
 
 
 #### DBのバックアップ
 ```
-$ docker-compose exec -T db mysqldump --no-tablespaces --single-transaction -u [DBユーザー名] --password='パスワード' wordpress > ./backup/$(date "+%Y-%m-%d-%H-%M").sql
+docker-compose exec -T db mysqldump --no-tablespaces --single-transaction -u [DBユーザー名] --password='パスワード' wordpress > ./backup/$(date "+%Y-%m-%d-%H-%M").sql
 ```
 上記コマンドで、`./backup`ディレクトリ内にダンプファイルが作成される  
 このファイルも含めてコミットする  
@@ -107,7 +107,7 @@ $ docker-compose exec -T db mysqldump --no-tablespaces --single-transaction -u [
 
 #### DBのリストア
 ```
-$ docker-compose exec -T db mysql -u [DBユーザー名] --password='パスワード' wordpress < ./[バックアップファイル].sql
+docker-compose exec -T db mysql -u [DBユーザー名] --password='パスワード' wordpress < ./[バックアップファイル].sql
 ```
 上記コマンドで、DBが復元される。  
 これら作業でチーム間のDBの差分を吸収する。  
