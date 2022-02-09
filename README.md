@@ -72,7 +72,9 @@ docker-compose up -d
 この際に、
 - html/配下にWordPressコアファイル
 - db_data/配下にmysqlコアファイル
+
 が作成される  
+また、必要に応じて[別リポジトリ](https://github.com/n-tsukiya/wordpress-template)からブランクテーマを`html/wp-content/theme/`配下にダウンロードしておく  
 <br>
 
 
