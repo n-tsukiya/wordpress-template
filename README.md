@@ -6,7 +6,6 @@ dockerにて、
 - DBコンテナ
 
 上記２コンテナでの`WordPress`の開発環境構築の雛形のリポジトリ  
-
 <br><br>
 
 
@@ -33,7 +32,7 @@ rm -rf .git
 ```
 db_data/*
 ```
-`.gitignore`は上記の1行のみに修正  
+`.gitignore`は上記の1行のみに修正(**他の行を削除する**)  
 <br>
 
 
@@ -100,17 +99,28 @@ docker-compose down
 ```
 docker-compose exec -T db mysqldump --no-tablespaces --single-transaction -u [DBユーザー名] --password='パスワード' wordpress > ./backup/$(date "+%Y-%m-%d-%H-%M").sql
 ```
-上記コマンドで、`./backup`ディレクトリ内にダンプファイルが作成される  
+上記コマンドで、`./backup`ディレクトリ内にダンプファイルが作成される（**カレントディレクトリに注意!**）  
 このファイルも含めてコミットする  
 <br>
 
 
 #### DBのリストア
 ```
-docker-compose exec -T db mysql -u [DBユーザー名] --password='パスワード' wordpress < ./[バックアップファイル].sql
+docker-compose exec -T db mysql -u [DBユーザー名] --password='パスワード' wordpress < ./backup/[バックアップファイル].sql
 ```
-上記コマンドで、DBが復元される。  
+上記コマンドで、DBが復元される。（**同じくカレントディレクトリに注意!**）  
 これら作業でチーム間のDBの差分を吸収する。  
+<br><br>
+
+
+## 補足
+`html/wp-config.php`内に下記を追記しておく  
+```
+define('WP_DEBUG', false);
+// もしかしたら最初からfalseかも
+```
+これが`true`のままリリースしてしまうとサイト画面にエラー文字が出力されてしまう  
+デバッグの際に使うかもしれないが、現状ほぼ使用していないためデフォルトで出力されないようにしておく  
 <br><br>
 
 
