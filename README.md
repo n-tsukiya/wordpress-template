@@ -74,7 +74,7 @@ docker-compose up -d
 - db_data/配下にmysqlコアファイル
 
 が作成される  
-また、必要に応じて[別リポジトリ](https://github.com/n-tsukiya/wordpress-template)からブランクテーマを`html/wp-content/theme/`配下にダウンロードしておく  
+また、必要に応じて[別リポジトリ](https://github.com/n-tsukiya/wordpress-blanktheme)からブランクテーマを`html/wp-content/theme/`配下にダウンロードしておく  
 <br>
 
 
