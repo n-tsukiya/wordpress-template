@@ -59,7 +59,7 @@ db_data/*
 ```
 上記の`MYSQL_ROOT_PASSWORD`, `MYSQL_USER`, `MYSQL_PASSWORD`, `container_name`を変更する。  
 
-それに合わせて`WORDPRESS_DB_USER`, `WORDPRESS_DB_PASSWORD`, `container_name`も修正する。  
+それに対応するように`WORDPRESS_DB_USER`, `WORDPRESS_DB_PASSWORD`, `container_name`も修正する。  
 <br>
 
 
@@ -78,12 +78,12 @@ docker-compose up -d
 <br>
 
 
-### 開発時
+### 開発時によく使うコマンド
 #### 使用コマンド
 ```
 docker-compose up -d
 ```
-上記コマンドでコンテナ立ち上げ、`localhost:8080/`を確認、各種作業を行う  
+上記コマンドでコンテナ立ち上げ、[localhost:8080/](localhost:8080/)を確認、各種作業を行う  
 
 <br>
 終了時に
