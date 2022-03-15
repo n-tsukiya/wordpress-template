@@ -30,9 +30,14 @@ rm -rf .git
 
 #### .gitignoreの編集
 ```
-db_data/*
+/db_data/*
+.DS_Store
+/html/wp-content/plugins/all-in-one-wp-migration/storage/*
+/html/wp-content/ai1wm-backups/*
+/html/wp-content/themes/hagioka-yochien/css/style.css
 ```
-`.gitignore`は上記の1行のみに修正(**他の行を削除する**)  
+`.gitignore`は上記に修正(**他の行を削除する**)  
+（開発時に発生するプラグインの差分も予め無視する記述をする）  
 <br>
 
 

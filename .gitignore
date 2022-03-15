@@ -1,4 +1,8 @@
 /html/*
 !/html/.gitkeep
 !/html/.htaccess
-db_data/*
+/db_data/*
+.DS_Store
+/html/wp-content/plugins/all-in-one-wp-migration/storage/*
+/html/wp-content/ai1wm-backups/*
+/html/wp-content/themes/hagioka-yochien/css/style.css
