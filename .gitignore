@@ -5,4 +5,4 @@
 .DS_Store
 /html/wp-content/plugins/all-in-one-wp-migration/storage/*
 /html/wp-content/ai1wm-backups/*
-/html/wp-content/themes/hagioka-yochien/css/style.css
+/html/wp-content/themes/[テーマ名]/css/style.css
