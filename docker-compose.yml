@@ -13,6 +13,7 @@ services:
       MYSQL_PASSWORD: wordpress
     # コンテナ名は変更すること
     container_name: wordpress_template_db
+    platform: linux/x86_64
 
   wordpress:
     depends_on:
